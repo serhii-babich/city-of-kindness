@@ -1,0 +1,26 @@
+:is(.content-layout) > * {
+  grid-column: 2;
+}
+
+.content-layout {
+  --flap: minmax(16px, 1fr);
+  --content: minmax(0, 1440px);
+
+  display: grid;
+  grid-template-columns:
+    var(--flap)
+    var(--content)
+    var(--flap);
+}
+
+.content-layout.md {
+  --content: minmax(0, 1200px);
+}
+
+.content-layout.sm {
+  --content: minmax(0, 888px);
+}
+
+.full-span {
+  grid-column: 1 / -1;
+}
